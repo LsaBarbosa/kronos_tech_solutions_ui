@@ -1,26 +1,37 @@
-<div class="login-container">
-  <h2>Login</h2>
-  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-    <div class="form-group">
-      <label for="username">Username:</label>
-      <input type="text" id="username" formControlName="username" />
-      <div *ngIf="loginForm.get('username')?.invalid && loginForm.get('username')?.touched" class="error-message">
-        O nome de usuário é obrigatório.
+<div class="login-page">
+  <div class="login-card-wrapper">
+    <div class="login-card">
+      <div class="login-header">
+         <h1 class="login-title">Faça seu Login</h1>
+      </div>
+
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+        <div class="form-group">
+          <label for="username">Usuário</label>
+          <input type="text" id="username" formControlName="username" placeholder="Seu nome de usuário" />
+          <div *ngIf="loginForm.get('username')?.invalid && loginForm.get('username')?.touched" class="error-message">
+            O usuário é obrigatório.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Senha</label>
+          <input type="password" id="password" formControlName="password" placeholder="Sua senha secreta" />
+          <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="error-message">
+            A senha é obrigatória.
+          </div>
+        </div>
+
+        <button type="submit" [disabled]="loginForm.invalid" class="login-button">Entrar</button>
+
+        <div *ngIf="errorMessage" class="error-message server-error">
+          {{ errorMessage }}
+        </div>
+      </form>
+
+      <div class="login-footer">
+        <p class="footer-text">&copy; 2024 Kronos. Todos os direitos reservados.</p>
       </div>
     </div>
-
-    <div class="form-group">
-      <label for="password">Password:</label>
-      <input type="password" id="password" formControlName="password" />
-      <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="error-message">
-        A senha é obrigatória.
-      </div>
-    </div>
-
-    <button type="submit" [disabled]="loginForm.invalid">Login</button>
-
-    <div *ngIf="errorMessage" class="error-message server-error">
-      {{ errorMessage }}
-    </div>
-  </form>
+  </div>
 </div>

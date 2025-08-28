@@ -1,75 +1,182 @@
-.login-container {
+/* Estilos para a página de login */
+.login-page {
+  /* Define a imagem de fundo para ocupar 100% da tela */
+  background-image: url('../../../../../public/time-4789970_1280.jpg');
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  
+  min-height: 100vh;
+  position: relative; /* Necessário para posicionar o formulário com position: absolute */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Contêiner do formulário - agora fixo à esquerda */
+.login-card-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%; /* Ocupa a metade esquerda da tela */
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background-color: #f0f2f5;
-  font-family: Arial, sans-serif;
+  background-color: rgba(0, 0, 0, 0); /* Adiciona um fundo semi-transparente para o formulário se destacar */
 }
 
-.login-container form {
+/* --- Estilização do Cartão de Login (login-card) --- */
+.login-card {
+  background-color: #141414;
+  border-radius: 2rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  padding: 40px;
+  max-width: 450px;
+  width: 100%;
+  text-align: center;
+  animation: fadeIn 0.8s ease-out;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Estilização do cabeçalho */
+.login-header {
+  margin-bottom: 30px;
+}
+
+.login-header .login-title {
+ color: #38b6ff;
+  font-size: 2.2em;
+  margin: 0;
+  font-weight: 700;
+}
+
+/* Estilização do Formulário */
+.login-form {
   display: flex;
   flex-direction: column;
-  background: white;
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 400px;
-}
-
-.login-container h2 {
-  text-align: center;
-  margin-bottom: 1.5rem;
-  color: #333;
 }
 
 .form-group {
-  margin-bottom: 1rem;
+  
+  margin-bottom: 20px;
+  text-align: left;
 }
 
 .form-group label {
   display: block;
-  margin-bottom: 0.5rem;
-  font-weight: bold;
-  color: #555;
+  margin-bottom: 8px;
+ color: #38b6ff;
+  font-weight: 500;
+  font-size: 0.95em;
 }
 
 .form-group input {
   width: 100%;
-  padding: 0.75rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box; /* Garante que padding e border não adicionem largura extra */
+  padding: 12px 15px;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  font-size: 1em;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
 }
 
-button[type="submit"] {
-  background-color: #007bff;
+.form-group input:focus {
+  border-color: #38b6ff;
+  box-shadow: 0 0 0 3px rgba(56, 182, 255, 0.2);
+  outline: none;
+}
+
+/* Estilização do Botão de Login */
+.login-button {
+  background-color: #38b6ff;
   color: white;
-  padding: 0.75rem;
+  padding: 14px 20px;
   border: none;
-  border-radius: 4px;
+  border-radius: 8px;
+  font-size: 1.1em;
+  font-weight: 600;
   cursor: pointer;
-  font-size: 1rem;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 10px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
 }
 
-button[type="submit"]:hover {
-  background-color: #0056b3;
+.login-button:hover:not(:disabled) {
+  background-color: #2a94dc;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-button[type="submit"]:disabled {
-  background-color: #a0a0a0;
+.login-button:disabled {
+  background-color: #cccccc;
   cursor: not-allowed;
+  transform: none;
 }
 
+/* Estilização do Rodapé */
+.login-footer {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+}
+
+.login-footer .footer-text {
+  color: #888;
+  font-size: 0.85em;
+}
+
+/* Estilização das mensagens de erro */
 .error-message {
   color: #dc3545;
-  font-size: 0.875rem;
-  margin-top: 0.5rem;
+  font-size: 0.85em;
+  margin-top: 5px;
+  text-align: left;
 }
 
 .server-error {
   text-align: center;
-  margin-top: 1rem;
+  margin-top: 20px;
+  font-weight: 500;
+}
+
+/* --- Media Query para Responsividade --- */
+@media (max-width: 900px) {
+  .login-page {
+    /* Remove a imagem de fundo para telas menores */
+    background-image: none;
+    background-color: #000000;
+  }
+  
+  .login-card-wrapper {
+    position: static;
+    width: 100%;
+    background-color: transparent;
+  }
+
+  .login-card {
+    box-shadow: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .login-card {
+    padding: 30px 20px;
+    margin: 0 15px;
+  }
+  .login-header .login-title {
+    font-size: 2em;
+  }
+  .login-header .welcome-text {
+    font-size: 1.5em;
+  }
 }

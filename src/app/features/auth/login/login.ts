@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit {
           this.router.navigate(['/']);
         },
         error: (err) => {
-          this.errorMessage = 'Login failed. Please check your credentials.';
+          this.errorMessage = 'Falha ao realizar login, Verifique suas credenciais.';
           console.error('Login Error:', err);
         }
       });
