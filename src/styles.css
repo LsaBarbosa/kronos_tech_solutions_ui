@@ -1,5 +1,4 @@
-/* You can add global styles to this file, and also import other style files */
-/* Reset CSS - Aplica estilos consistentes em todos os navegadores */
+/* Reset CSS (mantido da versão anterior) */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -20,8 +19,6 @@ time, mark, audio, video {
   font: inherit;
   vertical-align: baseline;
 }
-
-/* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block;
@@ -44,13 +41,35 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-
-/* Estilos adicionais para o projeto */
 html, body {
-  height: 100%; /* Garante que o body ocupe a altura total */
+  height: 100%;
 }
-
-/* Define a fonte padrão da aplicação */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Definição das variáveis CSS no seletor :root */
+:root {
+  /* Cores Principais */
+  --color-primary-blue: #38b6ff;
+  --color-primary-purple: #b47ffe;
+  --color-light-purple: #c399fd;
+  
+  /* Cores de Fundo */
+  --color-background-dark: #000000;
+  --color-card-background: #141414;
+
+  /* Cores de Texto e Componentes */
+  --color-text-dark: #333333;
+  --color-text-light: #f0f0f0;
+  --color-label: #b47ffe;
+  --color-border-light: #dcdcdc;
+  --color-footer-text: #888;
+  --color-footer-border: #eee;
+  
+  /* Cores para Ações e Status */
+  --color-button-default: #471f7faa;
+  --color-button-hover: #b47ffe;
+  --color-button-disabled: #ac93cf9d;
+  --color-error: #dc3545;
 }

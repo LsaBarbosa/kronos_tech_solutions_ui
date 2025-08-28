@@ -1,15 +1,14 @@
-/* Estilos para a página de login */
 .login-page {
   /* Define a imagem de fundo para ocupar 100% da tela */
   background-image: url('../../../../../public/bkg_ampulheta_wide.jpg');
-  background-size: auto;
-  background-position: bottom;
+  background-size: cover;
+  background-position: right;
   background-repeat: no-repeat;
+  background-color: var(--color-background-dark);
 
+  display: flex;
   min-height: 100vh;
-  position: relative;
-  /* Necessário para posicionar o formulário com position: absolute */
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: var(--font-family-default);
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -21,18 +20,16 @@
   top: 0;
   left: 0;
   width: 50%;
-  /* Ocupa a metade esquerda da tela */
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: rgba(0, 0, 0, 0);
-  /* Adiciona um fundo semi-transparente para o formulário se destacar */
 }
 
 /* --- Estilização do Cartão de Login (login-card) --- */
 .login-card {
-  background-color: #141414;
+  background-color: var(--color-card-background);
   border-radius: 2rem;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
   padding: 40px;
@@ -46,15 +43,8 @@
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 /* Estilização do cabeçalho */
@@ -62,15 +52,23 @@
   margin-bottom: 30px;
 }
 
+.login-header .welcome-text {
+  color: var(--color-primary-blue);
+  font-size: 1.2em;
+  margin-bottom: 5px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
 .login-header .login-title {
-  color: #c399fd;
+  color: var(--color-light-purple);
   font-size: 2.2em;
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--font-family-montserrat);
   font-optical-sizing: auto;
   font-weight: 700;
   font-style: italic;
   margin: 0;
-  font-weight: 700;
 }
 
 /* Estilização do Formulário */
@@ -80,7 +78,6 @@
 }
 
 .form-group {
-
   margin-bottom: 20px;
   text-align: left;
 }
@@ -88,7 +85,7 @@
 .form-group label {
   display: block;
   margin-bottom: 8px;
-  color: #b47ffe;
+  color: var(--color-label);
   font-weight: 500;
   font-size: 0.95em;
 }
@@ -96,7 +93,7 @@
 .form-group input {
   width: 100%;
   padding: 12px 15px;
-  border: 1px solid #dcdcdc;
+  border: 1px solid var(--color-border-light);
   border-radius: 8px;
   font-size: 1em;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
@@ -104,15 +101,15 @@
 }
 
 .form-group input:focus {
-  border-color: #38b6ff;
-  box-shadow: 0 0 0 3px rgba(56, 182, 255, 0.2);
+  border-color: var(--color-input-border-focus);
+  box-shadow: 0 0 0 3px var(--color-input-focus-shadow);
   outline: none;
 }
 
 /* Estilização do Botão de Login */
 .login-button {
-  background-color: #471f7faa;
-  color: white;
+  background-color: var(--color-button-default);
+  color: var(--color-text-light);
   padding: 14px 20px;
   border: none;
   border-radius: 8px;
@@ -126,13 +123,13 @@
 }
 
 .login-button:hover:not(:disabled) {
-  background-color: #b47ffe;
+  background-color: var(--color-button-hover);
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .login-button:disabled {
-  background-color: #ac93cf9d;
+  background-color: var(--color-button-disabled);
   cursor: not-allowed;
   transform: none;
 }
@@ -141,17 +138,17 @@
 .login-footer {
   margin-top: 30px;
   padding-top: 20px;
-  border-top: 1px solid #eee;
+  border-top: 1px solid var(--color-footer-border);
 }
 
 .login-footer .footer-text {
-  color: #888;
+  color: var(--color-footer-text);
   font-size: 0.85em;
 }
 
 /* Estilização das mensagens de erro */
 .error-message {
-  color: #dc3545;
+  color: var(--color-error);
   font-size: 0.85em;
   margin-top: 5px;
   text-align: left;
@@ -164,40 +161,27 @@
 }
 
 /* --- Media Query para Responsividade --- */
-
 @media (max-width: 1920px) {
   .login-page {
-    /* Define a imagem de fundo para ocupar 100% da tela */
-   background-image: url('../../../../../public/bkg_ampulheta.jpg');;
+    background-image: url('../../../../../public/bkg_ampulheta.jpg');
     background-size: cover;
     background-position: top;
     background-repeat: no-repeat;
-
-    min-height: 100vh;
-    position: relative;
-    /* Necessário para posicionar o formulário com position: absolute */
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
   }
 }
 
 @media (max-width: 900px) {
   .login-page {
-    /* Define a imagem de fundo para ocupar 100% da tela */
     background-image: url('../../../../../public/bkg_ampulheta.jpg');
     background-size: cover;
     background-position: right;
     background-repeat: no-repeat;
   }
-
   .login-card-wrapper {
     position: static;
     width: 100%;
     background-color: transparent;
   }
-
   .login-card {
     box-shadow: none;
   }
@@ -205,22 +189,18 @@
 
 @media (max-width: 600px) {
   .login-page {
-    /* Define a imagem de fundo para ocupar 100% da tela */
     background-image: url('../../../../../public/bkg_ampulheta.jpg');
     background-size: auto;
     background-position: right;
     background-repeat: repeat-x;
   }
-
   .login-card {
     padding: 30px 20px;
     margin: 0 15px;
   }
-
   .login-header .login-title {
     font-size: 2em;
   }
-
   .login-header .welcome-text {
     font-size: 1.5em;
   }
