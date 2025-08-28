@@ -1,9 +1,9 @@
 /* Estilos para a página de login */
 .login-page {
   /* Define a imagem de fundo para ocupar 100% da tela */
-  background-image: url('../../../../../public/bkg_ampulheta.jpg');
-  background-size: cover;
-  background-position: top;
+  background-image: url('../../../../../public/bkg_ampulheta_wide.jpg');
+  background-size: auto;
+  background-position: bottom;
   background-repeat: no-repeat;
 
   min-height: 100vh;
@@ -164,9 +164,29 @@
 }
 
 /* --- Media Query para Responsividade --- */
+
+@media (max-width: 1920px) {
+  .login-page {
+    /* Define a imagem de fundo para ocupar 100% da tela */
+   background-image: url('../../../../../public/bkg_ampulheta.jpg');;
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+
+    min-height: 100vh;
+    position: relative;
+    /* Necessário para posicionar o formulário com position: absolute */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+}
+
 @media (max-width: 900px) {
   .login-page {
     /* Define a imagem de fundo para ocupar 100% da tela */
+    background-image: url('../../../../../public/bkg_ampulheta.jpg');
     background-size: cover;
     background-position: right;
     background-repeat: no-repeat;
@@ -186,9 +206,10 @@
 @media (max-width: 600px) {
   .login-page {
     /* Define a imagem de fundo para ocupar 100% da tela */
-    background-size: cover;
+    background-image: url('../../../../../public/bkg_ampulheta.jpg');
+    background-size: auto;
     background-position: right;
-    background-repeat: no-repeat;
+    background-repeat: repeat-x;
   }
 
   .login-card {
