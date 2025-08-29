@@ -45,7 +45,7 @@
 .sidebar-title {
   font-size: 1.2rem;
   font-weight: 600;
-  color: #c399fd;
+  color:var(--color-text-light);
 }
 
 .close-btn {
@@ -75,12 +75,12 @@
 }
 
 .nav-item a:hover {
-  background-color: var(--color-light-purple);
+  background-color: var(--color-light);
   color: var(color-text-light);
 }
 
 .nav-item a.active {
-  background-color: var(--color-purple);
+  background-color: var(--color-dark-purple);
   font-weight: 600;
   color: var(color-text-light);
 }
