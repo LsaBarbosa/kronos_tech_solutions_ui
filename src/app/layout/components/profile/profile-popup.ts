@@ -2,6 +2,8 @@ import { Component, EventEmitter, Input, Output, OnInit, inject } from '@angular
 import { CommonModule, CurrencyPipe } from '@angular/common'; 
 import { EmployeeResponse } from '../../../core/models/employee/employee-response.model';
 import { EmployeeService } from '../../../core/services/employee/employee.service';
+import { Router } from '@angular/router';
+import { AuthService } from '../../../core/services/auth/auth';
 
 @Component({
   selector: 'app-profile-popup',
@@ -11,9 +13,11 @@ import { EmployeeService } from '../../../core/services/employee/employee.servic
   styleUrls: ['./profile-popup.css']
 })
 export class ProfilePopupComponent implements OnInit {
-  private employeeService = inject(EmployeeService);
+   private employeeService = inject(EmployeeService);
+  private authService = inject(AuthService);
+  private router = inject(Router);
 
-  @Input() visible: boolean = false;
+  @Input() open = false;
   @Output() close = new EventEmitter<void>();
 
   employeeProfile: EmployeeResponse | null = null;
@@ -40,7 +44,13 @@ export class ProfilePopupComponent implements OnInit {
     this.showSalary = !this.showSalary;
   }
 
-  closePopup(): void {
+  logout(): void {
+    this.authService.logout();
+    this.router.navigate(['/login']);
+    this.close.emit(); // Fecha o menu após o logout
+  }
+
+  closeMenu(): void {
     this.close.emit();
   }
 }

@@ -1,15 +1,13 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LayoutService } from '../../layout.service';
- import { Router } from '@angular/router';
- import { ProfileComponent } from '../../../features/profile/profile';
+import { Router } from '@angular/router';
+import { ProfilePopupComponent } from '../profile/profile-popup';
 import { AuthService } from '../../../core/services/auth/auth';
-import { ProfilePopupComponent } from "../profile/profile-popup";
-
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, ProfileComponent, ProfilePopupComponent], // Adicione o pop-up aos imports
+  imports: [CommonModule, ProfilePopupComponent],
   templateUrl: './header.html',
   styleUrl: './header.css'
 })
@@ -19,20 +17,17 @@ export class HeaderComponent {
   private router = inject(Router);
 
   profileImageUrl: string = 'https://i.pravatar.cc/150?u=a042581f4e29026704d';
-  isProfilePopupVisible = false; // Novo estado para controlar a visibilidade do pop-up
+  isProfileMenuOpen = false; // Estado para o menu de perfil
 
   toggleSidebar(): void {
     this.layoutService.toggleSidebar();
+    if (this.isProfileMenuOpen) {
+      this.isProfileMenuOpen = false;
+    }
   }
 
-  // Novo método para abrir o pop-up
-  openProfilePopup(): void {
-    this.isProfilePopupVisible = true;
-  }
-
-  // Novo método para fechar o pop-up
-  closeProfilePopup(): void {
-    this.isProfilePopupVisible = false;
+  toggleProfileMenu(): void {
+    this.isProfileMenuOpen = !this.isProfileMenuOpen;
   }
 
   logout(): void {

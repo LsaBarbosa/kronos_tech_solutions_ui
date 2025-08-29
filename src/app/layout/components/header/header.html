@@ -12,11 +12,9 @@
       <h1 class="logo">Kronos</h1>
     </div>
     <div class="right-section">
-      <!-- Clica na imagem para abrir o pop-up -->
-      <img [src]="profileImageUrl" alt="Foto de Perfil do Usuário" class="profile-pic" (click)="openProfilePopup()">
+      <!-- Clica na imagem para abrir/fechar o menu de perfil -->
+      <img [src]="profileImageUrl" alt="Foto de Perfil do Usuário" class="profile-pic" (click)="toggleProfileMenu()">
     </div>
   </div>
 </header>
-
-<!-- Adicione o pop-up aqui, no final do template -->
-<app-profile-popup [visible]="isProfilePopupVisible" (close)="closeProfilePopup()"></app-profile-popup>
+<app-profile-popup [open]="isProfileMenuOpen" (close)="toggleProfileMenu()"></app-profile-popup>
