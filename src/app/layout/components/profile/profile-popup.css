@@ -1,38 +1,23 @@
-/* src/app/layout/components/profile-menu/profile-menu.component.css */
-.menu-backdrop {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 1000;
-  visibility: hidden;
-  opacity: 0;
-  transition: visibility 0.3s, opacity 0.3s;
-}
-
-.menu-backdrop.open {
-  visibility: visible;
-  opacity: 1;
-}
-
 .profile-menu {
-  position: fixed;
-  top: 0;
-  right: 0;
+  position: absolute;
+  top: 60px; /* Ajuste para a altura do seu cabeçalho */
+  right: 10px;
   width: 300px;
-  height: 100vh;
   background-color: #2b2b2b;
   color: #f0f0f0;
-  transform: translateX(100%);
-  transition: transform 0.3s ease-in-out;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   z-index: 1001;
-  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: translateY(-20px) scale(0.95);
+  opacity: 0;
+  pointer-events: none;
 }
 
 .profile-menu.open {
-  transform: translateX(0);
+  transform: translateY(0) scale(1);
+  opacity: 1;
+  pointer-events: all;
 }
 
 .profile-menu-header {

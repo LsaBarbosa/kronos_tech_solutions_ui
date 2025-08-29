@@ -13,7 +13,7 @@ import { AuthService } from '../../../core/services/auth/auth';
   styleUrls: ['./profile-popup.css']
 })
 export class ProfilePopupComponent implements OnInit {
-   private employeeService = inject(EmployeeService);
+ private employeeService = inject(EmployeeService);
   private authService = inject(AuthService);
   private router = inject(Router);
 
