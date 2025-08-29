@@ -1,52 +1,50 @@
+/* src/app/layout/components/header/header.component.css */
 .main-header {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  right: 0;
   height: 60px;
-  background-color: #1a1a1a;
-  color: #f0f0f0;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  z-index: 1000;
+  background-color: var(--color-dark-background);
+  color: var(--color-text-light);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 100;
 }
 
 .header-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 100%;
-  padding: 0 20px;
+  width: 100%;
 }
 
 .left-section {
   display: flex;
   align-items: center;
-}
-
-.logo {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-  color: #38b6ff;
-  font-size: 1.5rem;
-  margin-left: 15px;
+  gap: 15px;
 }
 
 .menu-toggle {
   background: none;
   border: none;
-  color: white;
   cursor: pointer;
-  padding: 8px;
-  border-radius: 5px;
-  transition: background-color 0.3s;
+  color: var(--color-text-light);
 }
 
-.menu-toggle:hover {
-  background-color: #333;
+.logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-primary-purple); /* Alterado para a cor roxa */
+  margin: 0;
 }
 
-.menu-toggle svg {
-  vertical-align: middle;
+.right-section {
+  display: flex;
+  align-items: center;
 }
 
 .profile-pic {
@@ -54,11 +52,10 @@
   height: 40px;
   border-radius: 50%;
   cursor: pointer;
-  border: 2px solid #38b6ff;
-  transition: transform 0.2s, box-shadow 0.2s;
+  border: 2px solid var(--color-primary-purple); /* Alterado para a cor roxa */
+  transition: transform 0.2s;
 }
 
 .profile-pic:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 8px #38b6ff;
+  transform: scale(1.1);
 }

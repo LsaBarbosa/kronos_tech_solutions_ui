@@ -1,5 +1,5 @@
-/* You can add global styles to this file, and also import other style files */
-/* Reset CSS - Aplica estilos consistentes em todos os navegadores */
+/* src/styles.css */
+/* Reset CSS */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -47,10 +47,22 @@ table {
 
 /* Estilos adicionais para o projeto */
 html, body {
-  height: 100%; /* Garante que o body ocupe a altura total */
+  height: 100%;
+}
+body {
+  font-family: 'Montserrat', sans-serif;
 }
 
-/* Define a fonte padrão da aplicação */
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* Variáveis de cor globais */
+:root {
+  --color-primary-blue: #38b6ff;
+  --color-dark-background: #1a1a1a;
+  --color-text-light: #f0f0f0;
+  --color-text-dark: #333333;
+  --color-error-red: #dc3545;
+  --color-card-background: #ffffff;
+  --color-primary-purple: #9b59b6; 
+  --color-purple: #a260ff57;
+  --color-light-purple: #b47ffe;
+  --color-dark-purple: #471f7faa;
 }

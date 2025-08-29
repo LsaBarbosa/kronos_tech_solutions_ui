@@ -75,12 +75,12 @@
 }
 
 .nav-item a:hover {
-  background-color: #38b6ff;
-  color: #1a1a1a;
+  background-color: var(--color-light-purple);
+  color: var(color-text-light);
 }
 
 .nav-item a.active {
-  background-color: #38b6ff;
+  background-color: var(--color-purple);
   font-weight: 600;
-  color: #1a1a1a;
+  color: var(color-text-light);
 }
