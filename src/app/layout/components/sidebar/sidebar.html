@@ -1,0 +1,21 @@
+<div class="sidebar-backdrop" [class.open]="isSidebarOpen" (click)="closeSidebar()"></div>
+
+<div class="sidebar" [class.open]="isSidebarOpen">
+  <div class="sidebar-header">
+    <h3 class="sidebar-title">Menu</h3>
+    <button class="close-btn" (click)="closeSidebar()">
+      &times;
+    </button>
+  </div>
+  <nav class="sidebar-nav">
+    <ul class="nav-list">
+      <li class="nav-item">
+        <a routerLink="/home" routerLinkActive="active" (click)="closeSidebar()">Home</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/profile" routerLinkActive="active" (click)="closeSidebar()">Perfil</a>
+      </li>
+      <!-- Adicione mais itens de menu aqui -->
+    </ul>
+  </nav>
+</div>

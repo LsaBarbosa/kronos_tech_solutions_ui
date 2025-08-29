@@ -8,8 +8,7 @@ import { authInterceptor } from './core/interceptors/auth-interceptor';
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
-    // Adiciona o provedor de roteamento para a aplicação
-    provideRouter(routes), 
+    provideRouter(routes),
     provideHttpClient(withInterceptors([authInterceptor]))
   ]
 };
