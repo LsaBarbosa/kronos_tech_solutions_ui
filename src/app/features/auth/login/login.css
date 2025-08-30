@@ -1,14 +1,13 @@
+/* Estilos para a página de login */
 .login-page {
-  /* Define a imagem de fundo para ocupar 100% da tela */
   background-image: url('../../../../../public/bkg_ampulheta_wide.jpg');
   background-size: cover;
   background-position: right;
   background-repeat: no-repeat;
-  background-color: var(--color-background-dark);
-
+  
   display: flex;
   min-height: 100vh;
-  font-family: var(--font-family-default);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -29,9 +28,9 @@
 
 /* --- Estilização do Cartão de Login (login-card) --- */
 .login-card {
-  background-color: var(--color-card-background);
+  background-color:var(--color-dark);
   border-radius: 2rem;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  box-shadow: 3px 5px 0px var(--shadow-purple);
   padding: 40px;
   max-width: 450px;
   width: 100%;
@@ -53,7 +52,7 @@
 }
 
 .login-header .welcome-text {
-  color: var(--color-primary-blue);
+ 
   font-size: 1.2em;
   margin-bottom: 5px;
   font-weight: 600;
@@ -64,7 +63,7 @@
 .login-header .login-title {
   color: var(--color-light-purple);
   font-size: 2.2em;
-  font-family: var(--font-family-montserrat);
+  font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
   font-weight: 700;
   font-style: italic;
@@ -87,7 +86,7 @@
   margin-bottom: 8px;
   color: var(--color-label);
   font-weight: 500;
-  font-size: 0.95em;
+  font-size: 1.2em;
 }
 
 .form-group input {
@@ -95,7 +94,7 @@
   padding: 12px 15px;
   border: 1px solid var(--color-border-light);
   border-radius: 8px;
-  font-size: 1em;
+  font-size: 1.2em;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
   box-sizing: border-box;
 }
@@ -148,8 +147,8 @@
 
 /* Estilização das mensagens de erro */
 .error-message {
-  color: var(--color-error);
-  font-size: 0.85em;
+  color: var(--color-error-red);
+  font-size: 1.2em;
   margin-top: 5px;
   text-align: left;
 }
