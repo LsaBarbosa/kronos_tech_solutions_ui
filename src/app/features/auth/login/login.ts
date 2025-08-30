@@ -2,10 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { LoginRequest } from '../../../core/models/login-request.model';
-import { AuthService } from '../../../core/services/auth';
- 
-
+import { LoginRequest } from '../../../core/models/login/login-request.model';
+import { AuthService } from '../../../core/services/auth/auth';
+  
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -30,7 +29,8 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.authService.isLoggedIn()) {
-      this.router.navigate(['/']);
+      // Se o usuário já estiver logado, redireciona para a home
+      this.router.navigate(['/home']);
     }
   }
 
@@ -40,10 +40,11 @@ export class LoginComponent implements OnInit {
       this.authService.login(loginRequest).subscribe({
         next: (response) => {
           this.authService.setToken(response.token);
-          this.router.navigate(['/']);
+          // Redireciona para a rota 'home' após o login bem-sucedido
+          this.router.navigate(['/home']);
         },
         error: (err) => {
-          this.errorMessage = 'Falha ao realizar login, Verifique suas credenciais.';
+          this.errorMessage = 'Login failed. Please check your credentials.';
           console.error('Login Error:', err);
         }
       });

@@ -1,0 +1,40 @@
+<div class="profile-menu" [class.open]="open">
+  <div class="profile-menu-header">
+    <h3 class="menu-title">Perfil</h3>
+    <button class="close-btn" (click)="closeMenu()">&times;</button>
+  </div>
+  
+  <div *ngIf="isLoading" class="loading">Carregando perfil...</div>
+  <div *ngIf="error" class="error-message">{{ error }}</div>
+
+  <div *ngIf="employeeProfile" class="profile-content">
+    <div class="profile-details">
+      <div class="detail-item-title">
+        <span>{{ employeeProfile.fullName }}</span>
+        <span class="job-position">{{ employeeProfile.jobPosition }}</span>
+      </div>
+      <div class="detail-item">
+        <span class="label">Email:</span>
+        <span class="value">{{ employeeProfile.email }}</span>
+      </div>
+      <div class="detail-item">
+        <span class="label">Salário:</span>
+        <div class="salary-wrapper">
+          <span class="value" *ngIf="showSalary">
+            {{ employeeProfile.salary | currency:'BRL':'symbol':'1.2-2' }}
+          </span>
+          <span class="value masked" *ngIf="!showSalary"> R$ ••••••• </span>
+          <button class="toggle-button" (click)="toggleSalary()">
+            {{ showSalary ? 'Ocultar' : 'Exibir' }}
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="profile-menu-footer">
+      <button class="logout-button" (click)="logout()">
+        Sair
+      </button>
+    </div>
+  </div>
+</div>
